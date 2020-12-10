@@ -1,5 +1,5 @@
 // scene images
-var scene1, scene2;
+var scene1, scene2, scene3;
 
 // scene checker
 var scene = '1';
@@ -20,6 +20,7 @@ lookingRight = false;
 function preload() {
     scene1 = loadImage('Images/Cave.jpg');
     scene2 = loadImage('Images/Village.jpg');
+    scene3 = loadImage('Images/Cave2.jpg')
 
     for (var i = 0; i < 10; i++) {
         left[i] = loadImage("Apollo/Left/tile05" + i + ".png");
@@ -52,11 +53,14 @@ function draw() {
         background(scene1)
     } else if (scene === '2') {
         background(scene2)
+    } else if (scene ==='3') {
+        background(scene3)
     }
 
     apollo.collide(invisGround)
 
     moveLeft();
+    moveRight();
 
     // not moving
     if (moving === false) {
@@ -79,7 +83,7 @@ function draw() {
         apollo.x = windowWidth/3;
         console.log('cave on the right')
     } else if (apollo.isTouching(edges[1]) && scene === '1') {
-        scene = '2'
+        scene = '3'
         apollo.x = windowWidth/4;
         console.log('MoreCave')
     }
