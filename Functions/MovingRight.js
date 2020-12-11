@@ -6,7 +6,7 @@ function moveRight() {
         lookingRight = true;
         leftSteps = 0;
 
-        rightSteps += 1;
+        rightSteps += 0.5;
         rightAnim();
 
         if (rightSteps > 10) {

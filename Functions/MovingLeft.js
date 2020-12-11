@@ -1,12 +1,14 @@
 function moveLeft() {
     if (keyDown(65)) {
         apollo.x -= 10
+
         lookingLeft = true;
         moving = true;
         lookingRight = false;
+
         rightSteps = 0;
 
-        leftSteps += 1;
+        leftSteps += 0.5;
         leftAnim();
 
         if (leftSteps > 10) {
