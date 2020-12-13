@@ -25,9 +25,9 @@ lookingLeft = false;
 lookingRight = false;
 
 function preload() {
-    scene1 = loadImage('Images/Cave.jpg');
-    scene2 = loadImage('Images/Village.jpg');
-    scene3 = loadImage('Images/Cave2.jpg')
+    scene1 = loadImage('Scenes/Cave.jpg');
+    scene2 = loadImage('Scenes/Village.jpg');
+    scene3 = loadImage('Scenes/Cave2.jpg')
 
     for (var i = 0; i < 10; i++) {
         left[i] = loadImage("Apollo/Left/tile05" + i + ".png");
