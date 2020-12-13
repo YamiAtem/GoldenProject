@@ -24,19 +24,23 @@ function SceneChange() {
     // scenes
     if (scene === '1'){
         background(scene1)
+
         fire1.visible = false;
         fire2.visible = false;
         swordSprite.visible = false;
+        villian.visible = false
     } else if (scene === '2') {
         background(scene2)
         
         fire1.visible = true;
         fire2.visible = true;
         swordSprite.visible = true;
+        villian.visible = true;
     } else if (scene ==='3') {
         background(scene3)
         fire1.visible = false;
         fire2.visible = false;
         swordSprite.visible = false;
+        villian.visible = false;
     }
 }
