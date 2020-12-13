@@ -23,33 +23,23 @@ function moveLeft() {
 function leftAnim() {
     if (leftSteps === 1) {
         apollo.addImage(left[0])
-        console.log("Image");
     } else if (leftSteps === 2) {
-        apollo.addImage(left[1])
-        console.log("Image");
+        apollo.addImage(left[1]) 
     } else if (leftSteps === 3) {
         apollo.addImage(left[2])
-        console.log("Image");
     } else if (leftSteps === 4) {
         apollo.addImage(left[3])
-        console.log("Image");
     } else if (leftSteps === 5) {
         apollo.addImage(left[4])
-        console.log("Image");
     } else if (leftSteps === 6) {
         apollo.addImage(left[5])
-        console.log("Image");
     } else if (leftSteps === 7) {
         apollo.addImage(left[6])
-        console.log("Image");
     } else if (leftSteps === 8) {
         apollo.addImage(left[7])
-        console.log("Image");
     } else if (leftSteps === 9) {
         apollo.addImage(left[8])
-        console.log("Image");
     } else if (leftSteps === 10) {
         apollo.addImage(left[9])
-        console.log("Image");
     }
 }
