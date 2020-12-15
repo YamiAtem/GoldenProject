@@ -57,24 +57,11 @@ function setup() {
     invisGround= createSprite(windowWidth/2, windowHeight-100, windowWidth, 20);
     invisGround.visible = false;
 
-    fire1 = createSprite(windowWidth/1.75, windowHeight/1.95, 20, 20)
-    fire1.addAnimation('Fire', fireAnim)
-    fire1.scale = 0.5;
-    
-
-    fire2 = createSprite(windowWidth/3.9, windowHeight/1.95, 20, 20)
-    fire2.addAnimation('Fire', fireAnim)
-    fire2.scale = 0.5;
+    loadFireSprite();
 
     //healthBack = createSprite(windowWidth/0.5, windowHeight/)
 
-    swordSprite = createSprite(windowWidth/5, windowHeight-120)
-    swordSprite.addImage(swordImage)
-    swordSprite.scale = 0.25
-    swordSprite.visible = false;
-
-    sword2 = createSprite(100, 100)
-    sword2.visible = false;
+    loadSwordSprites();
 
     villian = createSprite(windowWidth/1.15, windowHeight-120, 80, 80)
 
