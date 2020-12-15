@@ -19,9 +19,13 @@ healthInt = 100;
 
 // sword 
 var swordImage, swordSprite, hasSword1, hasSword2;
-var leftSwordImg, rightSwordImg;
+var leftSwordImg, rightSwordI;
 var sword2;
 
+// scene 2 villian
+var villian, villianAnim, villianArray, villianHits;
+villianHits = 10;
+villianArray = []
 
 leftSteps = 0;
 rightSteps = 0;
@@ -35,31 +39,14 @@ lookingLeft = false;
 lookingRight = false;
 
 function preload() {
-    scene1 = loadImage('Scenes/Cave.jpg');
-    scene2 = loadImage('Scenes/Village.jpg');
-    scene3 = loadImage('Scenes/Cave2.jpg')
+    loadSceneImages();
 
-    for (var i = 0; i < 10; i++) {
-        left[i] = loadImage("Apollo/Left/tile05" + i + ".png");
-    }
+    loadApolloAnim();
+    loadApolloIdleImages();
 
-    for (var i = 0; i < 10; i++) {
-        right[i] = loadImage("Apollo/Right/tile07" + i + ".png");
-    }
+    loadFireAnim();
 
-    for (var i = 0; i < 6; i++) {
-        fire[i] = loadImage("NPC/Fire/tile00" + i + ".png")
-    }
-
-    fireAnim = loadAnimation(fire[0], fire[1], fire[2], fire[3], fire[4], fire[5])
-
-    idleLeft = loadImage('Apollo/Idle/tile010.png');
-    idleRight = loadImage('Apollo/Idle/tile030.png');
-    idle = loadImage('Apollo/Idle/tile000.png');
-
-    swordImage = loadImage('Apollo/Sword/Sword.png');
-    leftSwordImg = loadImage('Apollo/Sword/SwordLeft.png');
-    rightSwordImg = loadImage('Apollo/Sword/SwordRight.png');
+    loadSwordImage();
 }
 
 function setup() {
@@ -89,6 +76,8 @@ function setup() {
     sword2 = createSprite(100, 100)
     sword2.visible = false;
 
+    villian = createSprite(windowWidth/1.15, windowHeight-120, 80, 80)
+
     edges = createEdgeSprites();
 }
 
@@ -97,6 +86,7 @@ function draw() {
     SceneChange();
 
     apollo.collide(invisGround)
+    villian.collide(invisGround)
 
     moveLeft();
     moveRight();
