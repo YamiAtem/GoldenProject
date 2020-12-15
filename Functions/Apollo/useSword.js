@@ -25,3 +25,7 @@ function useSword() {
 function destroy() {
     sword2.visible = false;
 }
+
+function coolDown() {
+    hasSword2 = false;
+}
