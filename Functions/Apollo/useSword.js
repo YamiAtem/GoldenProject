@@ -32,6 +32,10 @@ function coolDown() {
         
         sword2.destroy();
 
+        textSize(25)
+        fill('red')
+        text("Sword on cooldown", windowWidth/2-220, windowHeight-50);
+        
         setTimeout(coolDown2, 1000)
     }
 }
