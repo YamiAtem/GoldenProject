@@ -1,5 +1,5 @@
 // scene images
-var scene1, scene2, scene3;
+var scene1, scene2, scene3, scene4, scene5;
 
 // scene checker
 var scene = '1';
@@ -19,13 +19,14 @@ healthInt = 100;
 
 // sword 
 var swordImage, swordSprite, hasSword1, hasSword2;
-var leftSwordImg, rightSwordI;
-var sword2;
+var leftSwordImg, rightSwordImg;
+var sword2, usedSword;
 
 // scene 2 villian
 var villian, villianAnim, villianArray, villianHits;
+
 villianHits = 10;
-villianArray = []
+villianArray = [];
 
 leftSteps = 0;
 rightSteps = 0;
@@ -47,6 +48,8 @@ function preload() {
     loadFireAnim();
 
     loadSwordImage();
+
+    loadVillianAnim();
 }
 
 function setup() {
@@ -59,12 +62,12 @@ function setup() {
 
     loadFireSprite();
 
-    //healthBack = createSprite(windowWidth/0.5, windowHeight/)
-
     loadSwordSprites();
 
-    villian = createSprite(windowWidth/1.15, windowHeight-120, 80, 80)
-
+    villian = createSprite(windowWidth/1.15, windowHeight-120, 80, 80);
+    villian.addAnimation('anim', villianAnim);
+    villian.scale = 2
+    
     edges = createEdgeSprites();
 }
 
@@ -81,5 +84,26 @@ function draw() {
     getSword();
     useSword();
 
+    textSize(20)
+    text(villianHits, villian.x, villian.y-100)
+
+    damageVillian1();
+    destroyVillian1();
+    coolDown();
+
     drawSprites();
+}
+
+function damageVillian1() {
+    if (sword2.isTouching(villian)) {
+        villianHits -= 2;
+
+        usedSword = true;
+    }
+}
+
+function destroyVillian1() {
+    if (villianHits === 0) {
+        villian.destroy();
+    }
 }
