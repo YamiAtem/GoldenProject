@@ -5,7 +5,7 @@ var scene1, scene2, scene3, scene4, scene5;
 var scene = '1';
 
 // scene props
-var invisGround, edges;
+var invisGround, edges, invisWall;
 
 // character
 var apollo, left, right, lookingLeft, lookingRight, leftSteps, rightSteps, moving, idleLeft, idleRight, idle;
@@ -57,8 +57,11 @@ function setup() {
 
     apollo = createSprite(windowWidth/2, windowHeight-120, 40, 40)
 
-    invisGround= createSprite(windowWidth/2, windowHeight-100, windowWidth, 20);
+    invisGround = createSprite(windowWidth/2, windowHeight-100, windowWidth, 20);
     invisGround.visible = false;
+
+    invisWall = createSprite(windowWidth/0.5, windowHeight/2, 20, windowHeight);
+    invisWall.visible = false;
 
     loadFireSprite();
 
@@ -67,7 +70,7 @@ function setup() {
     villian = createSprite(windowWidth/1.15, windowHeight-120, 80, 80);
     villian.addAnimation('anim', villianAnim);
     villian.scale = 2
-    
+
     edges = createEdgeSprites();
 }
 
@@ -77,6 +80,7 @@ function draw() {
 
     apollo.collide(invisGround)
     villian.collide(invisGround)
+    apollo.collide(invisWall)
 
     moveLeft();
     moveRight();
