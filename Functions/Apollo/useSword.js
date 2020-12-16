@@ -29,12 +29,17 @@ function destroy() {
 function coolDown() {
     if (usedSword === true) {
         hasSword2 = false;
+        
+        sword2.destroy();
 
-        setTimeout(coolDown2, 2500)
+        setTimeout(coolDown2, 1000)
     }
 }
 
 function coolDown2() {
     hasSword2 = true;
     usedSword = false;
+
+    sword2 = createSprite(100, 100)
+    sword2.visible = false;
 }
