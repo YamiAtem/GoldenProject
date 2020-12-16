@@ -27,5 +27,14 @@ function destroy() {
 }
 
 function coolDown() {
-    hasSword2 = false;
+    if (usedSword === true) {
+        hasSword2 = false;
+
+        setTimeout(coolDown2, 2500)
+    }
+}
+
+function coolDown2() {
+    hasSword2 = true;
+    usedSword = false;
 }
