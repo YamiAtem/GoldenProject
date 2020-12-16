@@ -48,6 +48,8 @@ function SceneChange() {
         fire2.visible = false;
         swordSprite.visible = false;
         villian.visible = false;
+
+        invisWall.x = windowWidth/0.5;
     } else if (scene === '2') {
         background(scene2)
         
@@ -55,6 +57,8 @@ function SceneChange() {
         fire2.visible = true;
         swordSprite.visible = true;
         villian.visible = true;
+
+        invisWall.x = windowWidth/0.5;
     } else if (scene ==='3') {
         background(scene3)
         
@@ -62,6 +66,8 @@ function SceneChange() {
         fire2.visible = false;
         swordSprite.visible = false;
         villian.visible = false;
+
+        invisWall.x = windowWidth/1.0125;
     } else if (scene === '4') {
         background(scene4);
 
@@ -69,6 +75,8 @@ function SceneChange() {
         fire2.visible = false;
         swordSprite.visible = false;
         villian.visible = false;
+
+        invisWall.x = windowWidth/0.5;
     } else if (scene === '5') {
         background(scene5);
 
@@ -76,5 +84,7 @@ function SceneChange() {
         fire2.visible = false;
         swordSprite.visible = false;
         villian.visible = false;
+
+        invisWall.x = windowWidth/1.0125;
     }
 }
