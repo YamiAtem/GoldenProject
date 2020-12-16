@@ -16,6 +16,25 @@ function Scene() {
         scene = '1'
         apollo.x = windowWidth/3;
     }
+
+    // scene 2 and 4
+    if (apollo.isTouching(edges[1]) && scene === '2') {
+        scene = '4';
+        apollo.x = windowWidth/3;
+    } else if (apollo.isTouching(edges[0]) && scene === '4') {
+        scene = '2';
+        apollo.x = windowWidth/3;
+    }
+
+    // scene 4 and 5
+    if (apollo.isTouching(edges[1]) && scene === '4') {
+        scene = '5';
+        apollo.x = windowWidth/3;
+    } else if (apollo.isTouching(edges[0]) && scene === '5') {
+        scene = '4';
+        apollo.x = windowWidth/3;
+    }
+
 }
 
 function SceneChange() {
@@ -28,7 +47,7 @@ function SceneChange() {
         fire1.visible = false;
         fire2.visible = false;
         swordSprite.visible = false;
-        villian.visible = false
+        villian.visible = false;
     } else if (scene === '2') {
         background(scene2)
         
@@ -38,6 +57,21 @@ function SceneChange() {
         villian.visible = true;
     } else if (scene ==='3') {
         background(scene3)
+        
+        fire1.visible = false;
+        fire2.visible = false;
+        swordSprite.visible = false;
+        villian.visible = false;
+    } else if (scene === '4') {
+        background(scene4);
+
+        fire1.visible = false;
+        fire2.visible = false;
+        swordSprite.visible = false;
+        villian.visible = false;
+    } else if (scene === '5') {
+        background(scene5);
+
         fire1.visible = false;
         fire2.visible = false;
         swordSprite.visible = false;
