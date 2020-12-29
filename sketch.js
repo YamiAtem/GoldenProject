@@ -2,13 +2,14 @@
 var scene1, scene2, scene3, scene4, scene5;
 
 // scene checker
-var scene = '1';
+var scene = '2';
 
 // scene props
 var invisGround, edges, invisWall;
 
 // character
-var apollo, left, right, lookingLeft, lookingRight, leftSteps, rightSteps, moving, idleLeft, idleRight, idle;
+var apollo, left, right, lookingLeft, lookingRight, leftSteps, rightSteps, moving, idleLeft, idleRight, idle, apolloHits;
+apolloHits = 20;
 
 // fire 
 var fire1, fire2, fire, fireAnim;
@@ -16,16 +17,17 @@ var fire1, fire2, fire, fireAnim;
 // health bar
 var healthInt, healthBar, healthBack;
 healthInt = 100;
-
+``
 // sword 
 var swordImage, swordSprite, hasSword1, hasSword2;
 var leftSwordImg, rightSwordImg;
 var sword2, usedSword;
 
 // scene 2 villian
-var villian, villianAnim, villianArray, villianHits;
+var villian, villian2, villianAnim, villianArray;
 
-villianHits = 10;
+var princess, mainVillian, princessImg, princessAnim, mainVillianImg;
+
 villianArray = [];
 
 leftSteps = 0;
@@ -50,6 +52,15 @@ function preload() {
     loadSwordImage();
 
     loadVillianAnim();
+    
+
+    v = loadImage('NPC/flying obstacle/fly-hardrock/tile001.png');
+    v1 = loadImage('NPC/flying obstacle/fly-hardrock/tile002.png');
+    v2 = loadImage('NPC/flying obstacle/fly-hardrock/tile003.png');
+    v3 = loadImage('NPC/flying obstacle/fly-hardrock/tile004.png');
+    v4 = loadImage('NPC/flying obstacle/fly-hardrock/tile005.png');
+
+    princessImg = loadImage('NPC/Princess/left/tile009.png')
 }
 
 function setup() {
@@ -67,47 +78,40 @@ function setup() {
 
     loadSwordSprites();
 
-    villian = createSprite(windowWidth/1.15, windowHeight-120, 80, 80);
+    villian = createSprite(50, 50, 80, 80);
     villian.addAnimation('anim', villianAnim);
     villian.scale = 2
+    villian.velocityY = 6;
+
+    villian2 = createSprite(200, 100, 80, 80);
+    villian2.addAnimation('anim', villianAnim);
+    villian2.scale = 2
+    villian2.velocityX = 6.6;
+
+    princess = createSprite(500, windowHeight-540, 80, 80)
+    princess.addImage(princessImg)
+    princess.scale = 2.25
 
     edges = createEdgeSprites();
 }
-
 
 function draw() {
     SceneChange();
 
     apollo.collide(invisGround)
-    villian.collide(invisGround)
     apollo.collide(invisWall)
+    princess.collide(invisGround)
 
+    villian2.bounceOff(edges[1])
+    villian2.bounceOff(edges[0])
+    villian.bounceOff(invisGround)
+    villian.bounceOff(edges[2])
+    
     moveLeft();
     moveRight();
 
     getSword();
     useSword();
 
-    textSize(20)
-    text(villianHits, villian.x, villian.y-100)
-
-    damageVillian1();
-    destroyVillian1();
-    coolDown();
-
     drawSprites();
-}
-
-function damageVillian1() {
-    if (sword2.isTouching(villian)) {
-        villianHits -= 2;
-
-        usedSword = true;
-    }
-}
-
-function destroyVillian1() {
-    if (villianHits === 0) {
-        villian.destroy();
-    }
 }
