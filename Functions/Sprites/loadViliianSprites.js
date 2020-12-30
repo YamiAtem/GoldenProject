@@ -30,3 +30,9 @@ function scene2BouceOff() {
     villian4.bounceOff(edges[1])
     villian4.bounceOff(edges[0])
 }
+
+function scene5Villian() {
+    main1 = createSprite(600, 200);
+    main1.addAnimation('anim', main1Anim);
+    main1.scale = 8;
+}
