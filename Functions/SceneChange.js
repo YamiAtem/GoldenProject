@@ -49,6 +49,8 @@ function SceneChange() {
         swordSprite.visible = false;
         villian.visible = false;
         villian2.visible = false;
+        villian3.visible = false;
+        villian4.visible = false;
         princess.visible = false;
 
         invisWall.x = windowWidth/0.5;
@@ -60,6 +62,8 @@ function SceneChange() {
         swordSprite.visible = true;
         villian.visible = true;
         villian2.visible = true;
+        villian3.visible = false;
+        villian4.visible = false;
         princess.visible = false;
 
         invisWall.x = windowWidth/0.5;
@@ -71,6 +75,8 @@ function SceneChange() {
         swordSprite.visible = false;
         villian.visible = false;
         villian2.visible = false;
+        villian3.visible = false;
+        villian4.visible = false;
         princess.visible = false;
 
         invisWall.x = windowWidth/1.0125;
@@ -82,6 +88,8 @@ function SceneChange() {
         swordSprite.visible = false;
         villian.visible = false;
         villian2.visible = false;
+        villian3.visible = false;
+        villian4.visible = false;
         princess.visible = false;
 
         invisWall.x = windowWidth/0.5;
@@ -93,6 +101,8 @@ function SceneChange() {
         swordSprite.visible = false;
         villian.visible = false;
         villian2.visible = false;
+        villian3.visible = false;
+        villian4.visible = false;
         princess.visible = true;
 
         invisWall.x = windowWidth/1.0125;
