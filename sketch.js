@@ -27,8 +27,9 @@ var sword2, usedSword;
 var villian, villian2, villian3, villian4, villian3, villian4, villianAnim, villianArray;
 
 // scene 5 villians
-var main1, main2, main1Anim, main2Anim, m1Defeated;
+var main1, main2, main1Anim, main2Anim, m1Defeated, main1hits;
 m1Defeated = false
+main1hits = 5;
 
 // scene 5 villian hearts1
 var h1, h2, h3, h4, h5, hI;
@@ -135,5 +136,32 @@ function draw() {
     getSword();
     useSword();
 
+    damageMain1();
+    removeHearts1();
+
     drawSprites();
+}
+
+function damageMain1() {
+    if (sword2.isTouching(main1) && m1Defeated === false && main1hits > -1) {
+        main1hits -= 1;
+
+        coolDown();
+    }
+}
+
+function removeHearts1() {
+    if (main1hits === 4 && m1Defeated === false) {
+        h1.destroy();
+    } else if (main1hits === 3 && m1Defeated === false) {
+        h2.destroy();
+    } else if (main1hits === 2 && m1Defeated === false) {
+        h3.destroy();
+    } else if (main1hits === 1 && m1Defeated === false) {
+        h4.destroy();
+    } else if (main1hits === 0 && m1Defeated === false) {
+        h5.destroy();
+
+        m1Defeated = true;
+    }
 }
