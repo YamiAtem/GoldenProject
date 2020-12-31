@@ -52,6 +52,8 @@ function SceneChange() {
         villian3.visible = false;
         villian4.visible = false;
 
+        main1.visible = false;
+
         h1.visible = false;
         h2.visible = false;
         h3.visible = false;
@@ -72,6 +74,8 @@ function SceneChange() {
         villian3.visible = false;
         villian4.visible = false;
 
+        main1.visible = false;
+            
         h1.visible = false;
         h2.visible = false;
         h3.visible = false;
@@ -98,6 +102,8 @@ function SceneChange() {
         h4.visible = false;
         h5.visible = false;
 
+        main1.visible = false;
+
         princess.visible = false;
 
         invisWall.x = windowWidth/1.0125;
@@ -111,6 +117,8 @@ function SceneChange() {
         villian2.visible = false;
         villian3.visible = false;
         villian4.visible = false;
+
+        main1.visible = false;
 
         h1.visible = false;
         h2.visible = false;
@@ -132,6 +140,8 @@ function SceneChange() {
         villian3.visible = false;
         villian4.visible = false;
         princess.visible = true;
+
+        main1.visible = true;
 
         h1.visible = true;
         h2.visible = true;
