@@ -24,12 +24,16 @@ var leftSwordImg, rightSwordImg;
 var sword2, usedSword;
 
 // scene 2 villians
-var villian, villian2, villian3, villian4, villian3, villian4, villianAnim, villianArray;
+var villian, villian2, villian3, villian4, villian3, villian4, villian5, villian6, villianAnim, villianArray;
+
+var villian7, villian8, villian9, villian10, villian11, villian12, villianAnim2;
 
 // scene 5 villians
 var main1, main2, main1Anim, main2Anim, m1Defeated, main1hits;
 m1Defeated = false
 main1hits = 5;
+
+var fireworks, fireworksAnim;
 
 // scene 5 villian hearts1
 var h1, h2, h3, h4, h5, hI;
@@ -70,7 +74,11 @@ function preload() {
 
     main1Anim = loadAnimation(v, v1, v2, v3, v4);
 
+    villianAnim2 = loadAnimation(v, v1, v2, v3, v4);
+
     hI = loadImage("NPC/flying obstacle/fly-hardrock/heart.png");
+
+    fireworksAnim = loadAnimation("NPC/fireworks/tile000.png", "NPC/fireworks/tile001.png", "NPC/fireworks/tile002.png", "NPC/fireworks/tile003.png", "NPC/fireworks/tile004.png", "NPC/fireworks/tile005.png")
 
     princessImg = loadImage('NPC/Princess/left/tile009.png');
 }
@@ -91,6 +99,7 @@ function setup() {
     loadSwordSprites();
 
     scene2Villian();
+    scene4Villian();
     scene5Villian();
 
     h1 = createSprite(main1.x + 100, main1.y - 175)
@@ -117,6 +126,11 @@ function setup() {
     princess.addImage(princessImg)
     princess.scale = 2.25
 
+    fireworks = createSprite(main1.x, main1.y);
+    fireworks.addAnimation('anim', fireworksAnim);
+    fireworks.scale = 2;
+    fireworks.visible = false;
+
     edges = createEdgeSprites();
 }
 
@@ -129,6 +143,7 @@ function draw() {
     main1.collide(invisGround);
 
     scene2BouceOff();
+    scene4BouceOff();
 
     moveLeft();
     moveRight();
@@ -139,12 +154,20 @@ function draw() {
     damageMain1();
     removeHearts1();
 
+    if (m1Defeated === true) {
+        fireworks.visible = true;
+
+        setTimeout(destroyMain1, 5000)
+    }
+
     drawSprites();
 }
 
 function damageMain1() {
     if (sword2.isTouching(main1) && m1Defeated === false && main1hits > -1) {
-        main1hits -= 1;
+        main1hits -= 0.5;
+
+        usedSword = true;
 
         coolDown();
     }
@@ -164,4 +187,10 @@ function removeHearts1() {
 
         m1Defeated = true;
     }
+}
+
+function destroyMain1() {
+    main1.destroy();
+
+    fireworks.visible = false;
 }
