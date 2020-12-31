@@ -47,12 +47,20 @@ function SceneChange() {
         fire1.visible = false;
         fire2.visible = false;
         swordSprite.visible = false;
+
         villian.visible = false;
         villian2.visible = false;
         villian3.visible = false;
         villian4.visible = false;
         villian5.visible = false;
         villian6.visible = false;
+
+        villian7.visible = false;
+        villian8.visible = false;
+        villian9.visible = false;
+        villian10.visible = false;
+        villian11.visible = false;
+        villian12.visible = false;
 
         main1.visible = false;
 
@@ -71,12 +79,20 @@ function SceneChange() {
         fire1.visible = true;
         fire2.visible = true;
         swordSprite.visible = true;
+
         villian.visible = true;
         villian2.visible = true;
         villian3.visible = true;
         villian4.visible = true;
         villian5.visible = true;
         villian6.visible = true;
+
+        villian7.visible = false;
+        villian8.visible = false;
+        villian9.visible = false;
+        villian10.visible = false;
+        villian11.visible = false;
+        villian12.visible = false;
 
         main1.visible = false;
             
@@ -95,12 +111,20 @@ function SceneChange() {
         fire1.visible = false;
         fire2.visible = false;
         swordSprite.visible = false;
+
         villian.visible = false;
         villian2.visible = false;
         villian3.visible = false;
         villian4.visible = false;
         villian5.visible = false;
         villian6.visible = false;
+
+        villian7.visible = false;
+        villian8.visible = false;
+        villian9.visible = false;
+        villian10.visible = false;
+        villian11.visible = false;
+        villian12.visible = false;
 
         h1.visible = false;
         h2.visible = false;
@@ -119,12 +143,20 @@ function SceneChange() {
         fire1.visible = false;
         fire2.visible = false;
         swordSprite.visible = false;
+
         villian.visible = false;
         villian2.visible = false;
         villian3.visible = false;
         villian4.visible = false;
         villian5.visible = false;
         villian6.visible = false;
+
+        villian7.visible = true;
+        villian8.visible = true;
+        villian9.visible = true;
+        villian10.visible = true;
+        villian11.visible = true;
+        villian12.visible = true;
 
         main1.visible = false;
 
@@ -143,6 +175,7 @@ function SceneChange() {
         fire1.visible = false;
         fire2.visible = false;
         swordSprite.visible = false;
+
         villian.visible = false;
         villian2.visible = false;
         villian3.visible = false;
@@ -150,6 +183,12 @@ function SceneChange() {
         villian5.visible = false;
         villian6.visible = false;
 
+        villian7.visible = false;
+        villian8.visible = false;
+        villian9.visible = false;
+        villian10.visible = false;
+        villian11.visible = false;
+        villian12.visible = false;
 
         princess.visible = true;
 
