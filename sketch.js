@@ -2,7 +2,7 @@
 var scene1, scene2, scene3, scene4, scene5;
 
 // scene checker
-var scene = '2';
+var scene = '5';
 
 // scene props
 var invisGround, edges, invisWall;
@@ -26,7 +26,12 @@ var sword2, usedSword;
 // scene 2 villians
 var villian, villian2, villian3, villian4, villian3, villian4, villianAnim, villianArray;
 
-// main villian
+// scene 5 villians
+var main1, main2, main1Anim, main2Anim, m1Defeated;
+m1Defeated = false
+
+// scene 5 villian hearts1
+var h1, h2, h3, h4, h5, hI;
 
 var princess, mainVillian, princessImg, princessAnim, mainVillianImg;
 
@@ -62,6 +67,10 @@ function preload() {
     v3 = loadImage('NPC/flying obstacle/fly-hardrock/tile004.png');
     v4 = loadImage('NPC/flying obstacle/fly-hardrock/tile005.png');
 
+    main1Anim = loadAnimation(v, v1, v2, v3, v4);
+
+    hI = loadImage("NPC/flying obstacle/fly-hardrock/heart.png");
+
     princessImg = loadImage('NPC/Princess/left/tile009.png');
 }
 
@@ -81,6 +90,27 @@ function setup() {
     loadSwordSprites();
 
     scene2Villian();
+    scene5Villian();
+
+    h1 = createSprite(main1.x + 100, main1.y - 175)
+    h1.addImage(hI);
+    h1.scale = 0.5;
+
+    h2 = createSprite(main1.x + 65, main1.y - 175)
+    h2.addImage(hI);
+    h2.scale = 0.5;
+
+    h3 = createSprite(main1.x + 30, main1.y - 175)
+    h3.addImage(hI);
+    h3.scale = 0.5;
+
+    h4 = createSprite(main1.x - 5, main1.y - 175)
+    h4.addImage(hI);
+    h4.scale = 0.5;
+
+    h5 = createSprite(main1.x - 40, main1.y - 175)
+    h5.addImage(hI);
+    h5.scale = 0.5;
 
     princess = createSprite(900, windowHeight-540, 80, 80)
     princess.addImage(princessImg)
@@ -95,6 +125,7 @@ function draw() {
     apollo.collide(invisGround)
     apollo.collide(invisWall)
     princess.collide(invisGround)
+    main1.collide(invisGround);
 
     scene2BouceOff();
 
