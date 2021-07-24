@@ -4,7 +4,7 @@
 var scene1, scene2, scene3, scene4, scene5;
 
 // scene checker
-var scene = '5';
+var scene = '1';
 
 // scene props
 var invisGround, edges, invisWall;
@@ -165,8 +165,11 @@ function draw() {
 
     if (m1Defeated === true) {
         fireworks.visible = true;
+        main1.destroy()
 
-        setTimeout(destroyMain1, 5000);
+        textSize(30)
+        stroke("green")
+        text("Congratulations you defeated the Monster and Freed the Princess and the Kingdom", windowWidth/2-500, windowHeight-500);
     }
 
     drawSprites();
@@ -196,11 +199,4 @@ function removeHearts1() {
 
         m1Defeated = true;
     }
-}
-
-function destroyMain1() {
-    main1.destroy();
-    main2.visible = true;
-
-    fireworks.visible = false;
 }
