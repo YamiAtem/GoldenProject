@@ -1,3 +1,5 @@
+/// <reference path="lib\p5.play.d.ts" />
+
 // scene images
 var scene1, scene2, scene3, scene4, scene5;
 
@@ -29,9 +31,11 @@ var villian, villian2, villian3, villian4, villian3, villian4, villian5, villian
 var villian7, villian8, villian9, villian10, villian11, villian12, villianAnim2;
 
 // scene 5 villians
-var main1, main2, main1Anim, main2Anim, m1Defeated, main1hits;
+var main1, main2, main1Anim, main2Anim, m1Defeated, main1hits, m2Defeated, main2hits;
 m1Defeated = false
+m2Defeated = false
 main1hits = 5;
+main2hits = 10;
 
 var fireworks, fireworksAnim;
 
@@ -39,6 +43,8 @@ var fireworks, fireworksAnim;
 var h1, h2, h3, h4, h5, hI;
 
 var princess, mainVillian, princessImg, princessAnim, mainVillianImg;
+
+var v, v1, v2, v3, v4, v5;
 
 villianArray = [];
 
@@ -71,6 +77,8 @@ function preload() {
     v2 = loadImage('NPC/flying obstacle/fly-hardrock/tile003.png');
     v3 = loadImage('NPC/flying obstacle/fly-hardrock/tile004.png');
     v4 = loadImage('NPC/flying obstacle/fly-hardrock/tile005.png');
+
+    v5 = loadImage('NPC/flying obstacle/enemy.png')
 
     main1Anim = loadAnimation(v, v1, v2, v3, v4);
 
@@ -141,6 +149,7 @@ function draw() {
     apollo.collide(invisWall)
     princess.collide(invisGround)
     main1.collide(invisGround);
+    main2.collide(invisGround)
 
     scene2BouceOff();
     scene4BouceOff();
@@ -191,6 +200,7 @@ function removeHearts1() {
 
 function destroyMain1() {
     main1.destroy();
+    main2.visible = true;
 
     fireworks.visible = false;
 }

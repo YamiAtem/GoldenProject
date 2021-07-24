@@ -106,4 +106,9 @@ function scene5Villian() {
     main1 = createSprite(600, 200);
     main1.addAnimation('anim', main1Anim);
     main1.scale = 8;
+
+    main2 = createSprite(575, 200);
+    main2.addAnimation('anim', v5);
+    main2.scale = 0.75
+    main2.visible = false;
 }
