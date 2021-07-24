@@ -1,5 +1,5 @@
 function loadSwordImage() {
-    swordImage = loadImage('Apollo/Sword/Sword.png');
-    leftSwordImg = loadImage('Apollo/Sword/SwordLeft.png');
-    rightSwordImg = loadImage('Apollo/Sword/SwordRight.png');
+    swordImage = loadImage('apollo_images/sword/Sword.png');
+    leftSwordImg = loadImage('apollo_images/sword/SwordLeft.png');
+    rightSwordImg = loadImage('apollo_images/sword/SwordRight.png');
 }

@@ -1,4 +1,4 @@
-/// <reference path="lib\p5.play.d.ts" />
+/// <reference path="lib/p5.play.d.ts" />
 
 // scene images
 var scene1, scene2, scene3, scene4, scene5;
@@ -72,23 +72,23 @@ function preload() {
     loadVillianAnim();
     
 
-    v = loadImage('NPC/flying obstacle/fly-hardrock/tile001.png');
-    v1 = loadImage('NPC/flying obstacle/fly-hardrock/tile002.png');
-    v2 = loadImage('NPC/flying obstacle/fly-hardrock/tile003.png');
-    v3 = loadImage('NPC/flying obstacle/fly-hardrock/tile004.png');
-    v4 = loadImage('NPC/flying obstacle/fly-hardrock/tile005.png');
+    v = loadImage('npc_images/flying_obstacle/fly_hardrock/tile001.png');
+    v1 = loadImage('npc_images/flying_obstacle/fly_hardrock/tile002.png');
+    v2 = loadImage('npc_images/flying_obstacle/fly_hardrock/tile003.png');
+    v3 = loadImage('npc_images/flying_obstacle/fly_hardrock/tile004.png');
+    v4 = loadImage('npc_images/flying_obstacle/fly_hardrock/tile005.png');
 
-    v5 = loadImage('NPC/flying obstacle/enemy.png')
+    v5 = loadImage('npc_images/flying_obstacle/enemy.png')
 
     main1Anim = loadAnimation(v, v1, v2, v3, v4);
 
     villianAnim2 = loadAnimation(v, v1, v2, v3, v4);
 
-    hI = loadImage("NPC/flying obstacle/fly-hardrock/heart.png");
+    hI = loadImage("npc_images/flying_obstacle/fly_hardrock/heart.png");
 
-    fireworksAnim = loadAnimation("NPC/fireworks/tile000.png", "NPC/fireworks/tile001.png", "NPC/fireworks/tile002.png", "NPC/fireworks/tile003.png", "NPC/fireworks/tile004.png", "NPC/fireworks/tile005.png")
+    fireworksAnim = loadAnimation("npc_images/fireworks/tile000.png", "npc_images/fireworks/tile001.png", "npc_images/fireworks/tile002.png", "npc_images/fireworks/tile003.png", "npc_images/fireworks/tile004.png", "npc_images/fireworks/tile005.png")
 
-    princessImg = loadImage('NPC/Princess/left/tile009.png');
+    princessImg = loadImage('npc_images/princess/left/tile009.png');
 }
 
 function setup() {
@@ -166,7 +166,7 @@ function draw() {
     if (m1Defeated === true) {
         fireworks.visible = true;
 
-        setTimeout(destroyMain1, 5000)
+        setTimeout(destroyMain1, 5000);
     }
 
     drawSprites();
